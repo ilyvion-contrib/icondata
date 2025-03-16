@@ -25,6 +25,7 @@ icondata_hi = { path = "../icondata_hi", version = "0.0.10", optional = true }
 icondata_im = { path = "../icondata_im", version = "0.0.10", optional = true }
 icondata_io = { path = "../icondata_io", version = "0.0.10", optional = true }
 icondata_lu = { path = "../icondata_lu", version = "0.0.10", optional = true }
+icondata_lulab = { path = "../icondata_lulab", version = "0.0.10", optional = true }
 icondata_mdi = { path = "../icondata_mdi", version = "0.0.10", optional = true }
 icondata_oc = { path = "../icondata_oc", version = "0.0.10", optional = true }
 icondata_ri = { path = "../icondata_ri", version = "0.0.10", optional = true }
@@ -50,6 +51,7 @@ default = [
     "ico-moon-free",
     "ionicons",
     "lucide",
+    "lucide-lab",
     "material-design-icons",
     "github-octicons",
     "remix-icon",
@@ -71,6 +73,7 @@ heroicons = ["dep:icondata_hi"]
 ico-moon-free = ["dep:icondata_im"]
 ionicons = ["dep:icondata_io"]
 lucide = ["dep:icondata_lu"]
+lucide-lab = ["dep:icondata_lulab"]
 material-design-icons = ["dep:icondata_mdi"]
 github-octicons = ["dep:icondata_oc"]
 remix-icon = ["dep:icondata_ri"]

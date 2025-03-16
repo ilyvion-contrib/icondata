@@ -172,6 +172,7 @@ pub enum PackageType {
     TablerIcons,
     GithubOcticons,
     Lucide,
+    LucideLab,
     Charm,
     MaterialDesignIcons,
 }
@@ -680,6 +681,28 @@ impl PackageType {
                     },
                 },
                 download_dir: Cow::Borrowed("lucide"),
+                svg_dir: Cow::Borrowed("icons"),
+                crate_version: SemVer {
+                    major: 0,
+                    minor: 0,
+                    patch: 10,
+                    prerelease: None,
+                    build: None,
+                },
+            },
+            PackageType::LucideLab => PackageMetadata {
+                short_name: Cow::Borrowed("lulab"),
+                package_name: Cow::Borrowed("Lucide Lab"),
+                licenses: &[Cow::Borrowed("ISC")],
+                source: PackageSource::Git {
+                    url: Cow::Borrowed("https://github.com/lucide-icons/lucide-lab"),
+                    target: GitTarget::Branch {
+                        name: Cow::Borrowed("main"),
+                        commit_ref: Cow::Borrowed("86fbd78b2c16815983e04fd8da898ae45d1d0d6d"),
+                        version_hint: None,
+                    },
+                },
+                download_dir: Cow::Borrowed("lucide_lab"),
                 svg_dir: Cow::Borrowed("icons"),
                 crate_version: SemVer {
                     major: 0,

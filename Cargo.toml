@@ -13,6 +13,7 @@ members = [
     "icondata_im",
     "icondata_io",
     "icondata_lu",
+    "icondata_lulab",
     "icondata_mdi",
     "icondata_oc",
     "icondata_ri",
