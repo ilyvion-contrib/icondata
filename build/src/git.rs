@@ -97,10 +97,17 @@ pub(crate) fn clone(
 /// This might be used in conjunction with `git::checkout()` if a simple `git::clone()` fails.
 /// You have to call `git::checkout()` after this was successful.
 #[instrument(level = "info")]
-pub(crate) fn clone_without_checkout(git_url: &str, target_dir: &PathBuf) -> Result<(), Error> {
+pub(crate) fn clone_without_checkout(
+    git_url: &str,
+    git_target: &GitTarget,
+    target_dir: &PathBuf,
+) -> Result<(), Error> {
     let clone_output = {
         let mut cmd = Command::new("git");
         cmd.args(["clone", "--no-checkout", "--single-branch", git_url]);
+        if let package::GitTarget::Branch { name, .. } = git_target {
+            cmd.args(["--branch", name]);
+        }
         cmd.arg(target_dir);
         debug!(
             ?cmd,

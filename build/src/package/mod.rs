@@ -117,7 +117,7 @@ impl Package<Unknown> {
                         })
                         .or_else(|_err| {
                             info!("Direct clone unsuccessful. Trying clone with checkout...");
-                            git::clone_without_checkout(url, &download_path).with_context(
+                            git::clone_without_checkout(url, target, &download_path).with_context(
                                 |_| GitCloneWithoutCheckoutSnafu {
                                     url: url.clone(),
                                     path: download_path.clone(),
